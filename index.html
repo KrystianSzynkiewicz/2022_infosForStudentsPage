@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #b5e853;
+  text-align: center;
+  line-height: 30px;
+  color: #1a1a1a;
+}
+
+* {
+width:100vw;
+}
+
+.button button{
+width: 150px;
+}
+
+body {
+	width: 100vw;
+  background-color: #1a1a1a;
+  color:  #b5e853;
+  display: block;
+  text-align: center;
+  border: #b5e853 groove;
+  height: 90vh;
+font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;;
+}
+h2 {
+  color: white;
+}
+
+</style>
+
+
+<body>
+
+<h1>Witaj na stronie!</h1>
+  <br>
+  <br>
+
+  <h2>Kliknij, aby przejść dalej!</h2>
+
+<br>
+
+<div class="button">
+<button onclick="move()">Kliknij tutaj</button> 
+</div>
+
+<br>
+<br>
+<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+
+
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    alert("Potwierdź Twój wybór!")
+    var elem = document.getElementById("myBar");
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+  if (width==100)
+	location.href="info.html";
+	
+//przekierowanie na 
+
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
